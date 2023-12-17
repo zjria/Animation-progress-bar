@@ -1,0 +1,145 @@
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$electronBlue: #6c5ce7;
+$soothingBreeze: #b2bec3;
+$americanRiver: #636e72;
+$white: white;
+
+main {
+    .container {
+
+        .skill-bar {
+            padding: 20px;
+            background-color: $electronBlue;
+            max-width: 500px;
+            justify-content: center;
+            margin: 0 auto;
+
+            ul {
+                max-width: 500px;
+                margin: auto;
+
+                li {
+                    margin: 50px 0px;
+                    list-style: none;
+                    font-weight: bolder;
+                    font-size: 25px;
+                    text-transform: uppercase;
+                    color: $white;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        background-color: $soothingBreeze;
+                        width: 100%;
+                        height: 25px;
+                        position: absolute;
+                        left: 0;
+                        top: calc(100% + 5px);
+                        border-radius: 1000px;
+                    }
+
+                    &::after {
+                        content: '';
+                        background-color: $americanRiver;
+                        width: 0%;
+                        height: 25px;
+                        position: absolute;
+                        left: 0;
+                        top: calc(100% + 5px);
+                        border-radius: 1000px;
+
+                        animation-duration: 5s;
+                        animation-delay: 1s;
+                        animation-timing-function: ease;
+                        animation-fill-mode: forwards;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.skill-bar ul li.html {
+    &::after {
+        animation-name: html;
+    }
+}
+
+.skill-bar ul li.css {
+    &::after {
+        animation-name: css;
+    }
+}
+
+.skill-bar ul li.javascript {
+    &::after {
+        animation-name: javascript;
+    }
+}
+
+.skill-bar ul li.bootstrap {
+    &::after {
+        animation-name: bootstrap;
+    }
+}
+
+.skill-bar ul li.tailwindCss {
+    &::after {
+        animation-name: tailwindCss;
+    }
+}
+
+.skill-bar ul li.react {
+    &::after {
+        animation-name: react;
+    }
+}
+
+@keyframes html {
+    to {
+        width: 90%;
+        background-color: orange;
+    }
+}
+
+@keyframes css {
+    to {
+        width: 80%;
+        background-color: orange;
+    }
+}
+
+@keyframes javascript {
+    to {
+        width: 70%;
+        background-color: orange;
+    }
+}
+
+@keyframes bootstrap {
+    to {
+        width: 75%;
+        background-color: orange;
+    }
+}
+
+@keyframes tailwindCss {
+    to {
+        width: 60%;
+        background-color: orange;
+    }
+}
+
+@keyframes react {
+    to {
+        width: 50%;
+        background-color: orange;
+    }
+}
